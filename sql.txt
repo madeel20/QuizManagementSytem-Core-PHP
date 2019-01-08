@@ -1,0 +1,29 @@
+create table studentlogin (
+    StId int PRIMARY KEY AUTO_INCREMENT,
+    StName varchar(255) not null ,
+    StUserName varchar(255) not null ,
+    StPassword varchar(255) not null 
+    
+    );
+create table studentmarks(
+    StId int ,
+    TotalMarks int not null ,
+    ObtMarks int not null,
+    date_time timestamp,
+    FOREIGN KEY (StId) REFERENCES studentlogin(StId)
+    );
+create table questions (
+    Id int AUTO_INCREMENT UNIQUE,
+    question varchar(255) ,
+    op1 varchar(50),
+    op2 varchar(50),
+    op3 varchar(50),
+    op4 varchar(50),
+    correctanswer int,
+    reg_date timestamp
+    
+    );
+create table admin(
+    username varchar(100),
+    password varchar(100)
+    );
